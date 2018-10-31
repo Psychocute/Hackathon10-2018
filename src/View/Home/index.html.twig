@@ -1,10 +1,19 @@
 {% extends 'layout.html.twig' %}
 
+{% block titre_de_page %}
+    <div class="lantern">
+        <div class="face">
+            <div class="eyes"></div>
+            <div class="mouth"></div>
+        </div>
+    </div>
+    <h1>Votre adresse si vous l'osez...</h1>
+{% endblock %}
 {% block content %}
     <form method="post" action="">
         {#<div class="form-group">#}
-            {#<label for="formGroupExampleInput">Bonbon: </label>#}
-            {#<input type="text" class="form-control" id="formGroupExampleInput" placeholder="exemple: Tagada">#}
+        {#<label for="formGroupExampleInput">Bonbon: </label>#}
+        {#<input type="text" class="form-control" id="formGroupExampleInput" placeholder="exemple: Tagada">#}
         {#</div>#}
         <div class="form-group">
             <label for="formGroupExampleInput2">Adresse :</label>
