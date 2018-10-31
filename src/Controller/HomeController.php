@@ -10,6 +10,7 @@ namespace Controller;
 
 
 use GuzzleHttp\Client;
+use Model\Home;
 use Model\HomeManager;
 
 class HomeController extends AbstractController
@@ -33,23 +34,19 @@ class HomeController extends AbstractController
             $lon=$res['features'][0]['geometry']['coordinates'][1];
             var_dump($lat);
             var_dump($lon);
-
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $homeManager = new HomeManager($this->getPdo());
+                $home = new Home();
+                $home->setLatitude($lat);
+                $home->setLongitude($lon);
+                $id = $homeManager->insert($home);
+                header('Location:/' );
+            }
 
         }
 
         return $this->twig->render('Home/index.html.twig');
     }
-    public function add()
-    {
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $itemManager = new HomeManager($this->getPdo());
-            $item = new Item();
-            $id = $itemManager->insert($item);
-            header('Location:/item/' . $id);
-        }
-
-        return $this->twig->render('Item/add.html.twig');
-    }
 }
 

@@ -26,7 +26,17 @@ class HomeManager extends AbstractManager
 
     public function selectAll(): array
     {
-        return $this->pdo->query('SELECT address FROM ' . $this->table, \PDO::FETCH_ASSOC)->fetchAll();
+        return $this->pdo->query('SELECT latitude, longitude FROM ' . $this->table, \PDO::FETCH_ASSOC)->fetchAll();
+    }
+
+    public function insert(Home $home): int
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("INSERT INTO $this->table (`latitude`, `longitude`) VALUES (:latitude, :longitude)");
+        $statement->bindValue('latitude', $home->getLatitude(), \PDO::PARAM_STR);
+        $statement->bindValue('longitude', $home->getLongitude(), \PDO::PARAM_STR);
+
+        return $statement->execute();
     }
 
 }
