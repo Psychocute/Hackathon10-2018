@@ -1,29 +1,46 @@
 {% extends 'layout.html.twig' %}
 
-    {% block content %}
+    {% block titre_de_page %}
         <div class="container">
+            <div class="title">
+                <link href='https://fonts.googleapis.com/css?family=Aladin' rel='stylesheet' type='text/css'>
+                <div class="image">
+                    <div class="pumpkin">
+                        <div class="stem">⟆</div>
+                        <div class="segment"></div>
+                        <div class="segment"></div>
+                        <div class="segment"></div>
+                        <div class="segment"></div>
+                        <div class="segment"></div>
+                        <div class="eye left"></div>
+                        <div class="eye right"></div>
+                        <div class="mouth"></div>
+                    </div>
+                    <div class="shadow"></div>
+                    <p class="spooky">BONBONDEX</p>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+    {% block content %}
         <div class="row justify-content-center">
-        {% for product in liste %}
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card mt-5 mr-3">
-                    <img class="card img-fluid" src="{{ product.image_url }}" alt="{{ product.product_name}}">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <h5 class="card-title">{{ product.product_name }}</h5>
-                                <p class="card-text"></p></div>
-                            <div class="col-12">
-                                <a href="#" class="btn btn-warning"> Trouvé !</a>
+            {% for product in liste %}
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card mt-5 mr-3">
+                        <img class="card img-fluid" src="{{ product.image_url }}" alt="{{ product.product_name }}">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="card-title">{{ product.product_name }}</h5>
+                                    <p class="card-text"></p></div>
+                                <div class="col-12">
+                                    <a href="#" class="btn btn-warning"> Trouvé !</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-
-
-        {% endfor %}
-        </div>
+            {% endfor %}
         </div>
     {% endblock %}
 
