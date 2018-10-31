@@ -1,10 +1,29 @@
 {% extends 'layout.html.twig' %}
 
-{% block content %}
-    <div class="row justify-content-around">
-        <div class="card" style="width: 8rem;">
-            <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
-        </div>
-    </div>
+    {% block content %}
+        <div class="container">
+        <div class="row justify-content-center">
+        {% for product in liste %}
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card mt-5 mr-3">
+                    <img class="card img-fluid" src="{{ product.image_url }}" alt="{{ product.product_name}}">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <h5 class="card-title">{{ product.product_name }}</h5>
+                                <p class="card-text"></p></div>
+                            <div class="col-12">
+                                <a href="#" class="btn btn-warning"> Trouvé !</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-{% endblock %}
+
+
+        {% endfor %}
+        </div>
+        </div>
+    {% endblock %}
+

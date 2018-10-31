@@ -6,3 +6,8 @@ html .pageStandard {
     -o-background-size: cover;
     background-size: cover;
 }
+.img-fluid
+{
+min-height: 350px;
+    max-height: 350px;
+}
