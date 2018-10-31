@@ -1,5 +1,4 @@
 @media screen and (min-width: 320px) {
-
     html .pageStandard {
         background: url('../images/bg_home.jpg') no-repeat center center fixed;
         -webkit-background-size: cover;
@@ -21,11 +20,21 @@
         font-family: 'Griffy', cursive;
         font-weight: bold;
         font-size: 5vw;
-    }
+        margin-left: 35%;
 
+    }
+    .card
+    {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpbUvjvANX4chKm9idvId1hFFwdtI_5w_1Xkiil8XNuefTf7ar");
+        background-position: center;
+        border-radius: 3%;
+    }
     .card-title {
         font-family: 'Henny Penny', cursive;
         font-size: 5vw;
+        color: #ff2f07;
+        text-align: center;
+        font-weight: bold;
     }
 
     .image {
