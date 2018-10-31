@@ -14,7 +14,7 @@ class HomeManager extends AbstractManager
     /**
      *
      */
-    const TABLE = 'item';
+    const TABLE = 'address';
 
     /**
      *  Initializes this class.
@@ -24,5 +24,9 @@ class HomeManager extends AbstractManager
         parent::__construct(self::TABLE, $pdo);
     }
 
+    public function selectAll(): array
+    {
+        return $this->pdo->query('SELECT address FROM ' . $this->table, \PDO::FETCH_ASSOC)->fetchAll();
+    }
 
 }
