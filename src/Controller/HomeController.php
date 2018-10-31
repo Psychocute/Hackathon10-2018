@@ -32,8 +32,6 @@ class HomeController extends AbstractController
 //            var_dump($res);
             $lat=$res['features'][0]['geometry']['coordinates'][0];
             $lon=$res['features'][0]['geometry']['coordinates'][1];
-            var_dump($lat);
-            var_dump($lon);
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $homeManager = new HomeManager($this->getPdo());
                 $home = new Home();
